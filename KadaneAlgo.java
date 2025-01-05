@@ -31,4 +31,7 @@ class KadaneAlgo {
         scanner.close();
     }
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 415d82b53592186cfc6c5a7d63d957712fb3c5fa
