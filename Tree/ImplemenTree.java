@@ -1,8 +1,5 @@
 import java.util.ArrayList;
 import java.util.Stack;
-
-import javax.swing.tree.TreeNode;
-
 import java.util.*;
 
 public class ImplemenTree {
@@ -10,8 +7,8 @@ public class ImplemenTree {
         int val;
         ArrayList<Node> child;
 
-        public Node(int val) {
-            this.val = val;
+        public Node(int x) {
+            this.val = x;
             this.child = new ArrayList<>();
         }
     }
@@ -25,23 +22,25 @@ public class ImplemenTree {
                 st.pop();
             } else {
                 Node node = new Node(nums[i]);
-                if (!st.isEmpty()) {
-                    st.peek().child.add(node);
+                if (st.size()>0) {
+                    Node topNode =st.peek();
+                    topNode.child.add(node);
+                    st.push(node);
                 } else {
                     root = node;
+                    st.push(node);
                 }
-                st.push(node);
             }
         }
         return root;
     }
 
-    public static void display(Node root) {
+    private static void display(Node root) {
         if (root == null) return;
 
        String s = root.val + "->" ;
        for (Node node : root.child){
-        s += node.val + "->" ;
+            s = s+ node.val + "->" ;
        }
        s += "." ;
        System.out.println(s);
@@ -50,25 +49,25 @@ public class ImplemenTree {
        }
     }
 
-   
 
-
-
-        public static int max(Node root) {
+        private static int maxVal(Node root) {
             int max = Integer.MIN_VALUE;
+         
             for (Node nd : root.child) {
-                int x = max(nd);
+                int x = maxVal(nd);
                 max = Math.max(x, max);
             }
-            return Math.max(root.val, max);
+            max = Math.max(root.val, max);
+            return max;
         }
         
     
 
     public static void main(String[] args) {
-        int[] nums = {20,2,100,-1,-1,5,30,-1,50,-1,70,5,-1,-1,-1,140,7,200,-1,-1,-1,-1};
+        int[] nums = {5,6,9,-1,-1,7,10,-1,11,-1,12,-1,-1,8,13,14,-1,-1,-1,-1};
         Node root = Construct(nums);
         System.out.println("Tree Structure:");
         display(root);
+        System.out.println(maxVal(root));
     }
 }
