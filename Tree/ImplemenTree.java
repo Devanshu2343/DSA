@@ -64,7 +64,7 @@ public class ImplemenTree {
     
 
     public static void main(String[] args) {
-        int[] nums = {5,6,9,-1,-1,7,10,-1,11,-1,12,-1,-1,8,13,14,-1,-1,-1,-1};
+        int[] nums = {5,6,9,-1,-1,7,10,-1,11,-1,12,-1,-1,8,13,14,11,-1,-1,-1,-1,-1};
         Node root = Construct(nums);
         System.out.println("Tree Structure:");
         display(root);
