@@ -80,12 +80,16 @@ public class LinkedList {
         LinkedList ll = new LinkedList();
         ll.print();
         ll.addFirst(2);
+        System.out.println(ll.size);
         ll.print();
         ll.addFirst(1);
+        System.out.println(ll.size);
         ll.print();
         ll.addLast(3);
+        System.out.println(ll.size);
         ll.print();
         ll.addLast(4);
+        System.out.println(ll.size);
         ll.add(4,11 );
         ll.print();
         System.out.println(ll.size);
