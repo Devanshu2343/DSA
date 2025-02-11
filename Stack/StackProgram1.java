@@ -8,5 +8,7 @@ public class StackProgram1 {
         st.push(5);
         st.push(6);
         System.out.println(st.peek()); 
+        st.pop();
+        System.out.println(st.peek());
     }
 }
