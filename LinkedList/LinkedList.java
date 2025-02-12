@@ -91,6 +91,7 @@ public class LinkedList {
         ll.addLast(4);
         System.out.println(ll.size);
         ll.add(4,11 );
+        ll.add(5,19 );
         ll.print();
         System.out.println(ll.size);
     }
