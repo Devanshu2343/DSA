@@ -92,6 +92,7 @@ public class LinkedList {
         System.out.println(ll.size);
         ll.add(4,11 );
         ll.add(5,19 );
+        ll.add(6,24 );
         ll.print();
         System.out.println(ll.size);
     }
