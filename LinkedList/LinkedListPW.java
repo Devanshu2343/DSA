@@ -26,6 +26,8 @@ public class LinkedListPW {
         System.out.println(a);
         System.out.println(a.data);
         System.out.println(a.next);
+        System.out.println(b.data);
+        System.out.println(a.next.data);
     }
     
 }
