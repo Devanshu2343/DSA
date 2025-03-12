@@ -23,8 +23,41 @@ public class ImplementLL{
                 tail.next = temp ;
             }
              tail = temp ;
-
         }
+
+        void insertAtHead (int data){
+            Node temp = new Node(data);
+            if (head == null){
+                head = tail = temp ;
+            }
+            else {
+                temp.next= head ;
+                head = temp;
+            }
+        }
+
+        void insertAt(int idx , int val ){
+            Node t = new Node(val);
+            Node temp = head;
+            if (idx == size()){
+                insertAtEnd(val);
+                return;
+            }
+            else if (idx == 0){
+                insertAtHead(val);
+                return ;
+            }
+            else if (idx <0 || idx>size()){
+                System.out.println("Invalid Index");
+            }
+            for (int i=1 ;i<=idx-1;i++){
+                temp =temp.next;
+            }
+            t.next=temp.next;
+            temp.next=t ;
+        }
+
+
 
         void display (){
             Node temp = head ;
@@ -32,6 +65,7 @@ public class ImplementLL{
                 System.out.print(temp.data + "->");
                 temp =temp.next;
             }
+          
         }
 
         int size (){
@@ -57,8 +91,13 @@ public class ImplementLL{
         ll.insertAtEnd(78); // 9 -> 89 ->78
         ll.insertAtEnd(45); // 9 -> 89 ->78 -> 45
         ll.display();
+        ll.insertAtHead(10); // 10->9 -> 89 ->78 -> 45
+        ll.display();
         System.out.println();
         System.out.println(ll.size());
+
+        ll.insertAt(1,4 );
+        ll.display();  // 10->4 -> 9 -> 89 ->78 -> 45
     }
     
 }
